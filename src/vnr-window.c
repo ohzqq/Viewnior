@@ -2005,6 +2005,7 @@ vnr_window_key_press (GtkWidget *widget, GdkEventKey *event)
 
     switch(event->keyval){
         case GDK_KEY_Left:
+        case 'k':
             if (event->state & GDK_MOD1_MASK)
             {
                 vnr_window_cmd_prev (NULL, window);
@@ -2024,6 +2025,7 @@ vnr_window_key_press (GtkWidget *widget, GdkEventKey *event)
             result = TRUE;
             break;
         case GDK_KEY_Right:
+        case 'j':
             if (event->state & GDK_MOD1_MASK)
             {
                 vnr_window_cmd_next (NULL, window);
@@ -2083,6 +2085,9 @@ vnr_window_key_press (GtkWidget *widget, GdkEventKey *event)
             break;
         case 'c':
             vnr_window_cmd_crop(NULL, window);
+            break;
+        case 'D':
+						vnr_window_cmd_delete(NULL, window);
             break;
     }
 
